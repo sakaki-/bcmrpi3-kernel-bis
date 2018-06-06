@@ -26,7 +26,7 @@ The current kernel tarball may be downloaded from the link below (or via `wget`,
 
 Variant | Version | Most Recent Image
 :--- | ---: | ---:
-Kernel, dtbs, modules and (kernel) firmware | 4.14.44.20180601 | [bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.44.20180601/bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz)
+Kernel, dtbs and modules | 4.14.44.20180601 | [bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.44.20180601/bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz)
 
 The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && conform_config.sh && make olddefconfig`) may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/config). The 'baseline' `bcmrpi3_defconfig` may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/bcmrpi3_config), the `conform_config.sh` script may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh), and a diff between the 'tweaked' and 'baseline' configurations may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/vs_bcmrpi3_config.diff).
 
