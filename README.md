@@ -11,7 +11,7 @@ As with its sister project [bcmrpi-kernel](https://github.com/sakaki-/bcmrpi3-ke
 
 > If you have changes you'd like to apply to the kernel config used by this project, please submit a PR targeting the [`conform_config.sh`](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh) script. Changes should target the *end* of the script. Only edits which use the bundled convenience functions `set_kernel_config` and (rarely) `unset_kernel_config` will be considered for merging. Modularization is prefered wherever possible. Please include a short comment describing the changes, ideally including a link or bug ID.
 
-A new build tarball is automatically created and uploaded as a release asset each week (unless the tip of the default branch is unchanged from the prior week, or an error occurs during the build process). The versions of the builds in this project will always mirror those of [bcmrpi-kernel](https://github.com/sakaki-/bcmrpi3-kernel), commencing 1 June 2018.
+A new build tarball is automatically created and uploaded as a release asset each week (unless the tip of the default branch is unchanged from the prior week, or an error occurs during the build process). The versions of the builds in this project will always mirror those of [bcmrpi3-kernel](https://github.com/sakaki-/bcmrpi3-kernel), commencing 1 June 2018.
 
 > The default branch is used, as that is generally given most attention for e.g. VC4 backports.
 
