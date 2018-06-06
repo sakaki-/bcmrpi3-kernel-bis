@@ -7,7 +7,7 @@ Automated build of a tweaked version of the latest 64-bit `bcmrpi3_defconfig` Li
 
 This project contains a weekly autobuild of the default branch (currently, `rpi-4.14.y`) of the [official Raspberry Pi Linux source tree](https://github.com/raspberrypi/linux), for the [64-bit Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) and [B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/).
 
-As with its sister project [bcmrpi-kernel](https://github.com/sakaki-/bcmrpi3-kernel), the baseline build configuration is the upstream `bcmrpi3_defconfig`, wherein the first 12 hex digits of the tip commit SHA1 hash are appended to `CONFIGLOCALVERSION` (with a separating hyphen). However, in *this* project, `-bis` is additionally appended to `CONFIGLOCALVERSION`, and (more importantly) additional tweaks are *also* applied to the kernel configuration before building, by running the [`conform_config.sh`](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh) script.
+As with its sister project [bcmrpi3-kernel](https://github.com/sakaki-/bcmrpi3-kernel), the baseline build configuration is the upstream `bcmrpi3_defconfig`, wherein the first 12 hex digits of the tip commit SHA1 hash are appended to `CONFIGLOCALVERSION` (with a separating hyphen). However, in *this* project, `-bis` is additionally appended to `CONFIGLOCALVERSION`, and (more importantly) additional tweaks are *also* applied to the kernel configuration before building, by running the [`conform_config.sh`](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh) script.
 
 > If you have changes you'd like to apply to the kernel config used by this project, please submit a PR targeting the [`conform_config.sh`](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh) script. Changes should target the *end* of the script. Only edits which use the bundled convenience functions `set_kernel_config` and (rarely) `unset_kernel_config` will be considered for merging. Modularization is prefered wherever possible. Please include a short comment describing the changes, ideally including a link or bug ID.
 
@@ -22,7 +22,7 @@ Each kernel release tarball currently provides the following files:
 * `/boot/bcm-2710-rpi-3-b.dtb`, `/boot/bcm-2710-rpi-3-b-plus.dtb` and `/boot/bcm-2837-rpi-3-b.dtb` (the device tree blobs);
 * `/lib/modules/<kernel release name>/...` (the module set for the kernel);
 
-The current kernel tarball may be downloaded from the link below (or via `wget`, or via the corresponding `bcmrpi-kernel-bin` ebuild, per the [instructions following](#installation)):
+The current kernel tarball may be downloaded from the link below (or via `wget`, or via the corresponding `bcmrpi3-kernel-bin` ebuild, per the [instructions following](#installation)):
 
 Variant | Version | Most Recent Image
 :--- | ---: | ---:
