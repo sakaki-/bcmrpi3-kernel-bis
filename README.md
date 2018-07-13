@@ -26,7 +26,7 @@ The current kernel tarball may be downloaded from the link below (or via `wget`,
 
 Variant | Version | Most Recent Image
 :--- | ---: | ---:
-Kernel, dtbs and modules | 4.14.54.20180710 | [bcmrpi3-kernel-bis-4.14.54.20180710.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.54.20180710/bcmrpi3-kernel-bis-4.14.54.20180710.tar.xz)
+Kernel, dtbs and modules | 4.14.54.20180713 | [bcmrpi3-kernel-bis-4.14.54.20180713.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.54.20180713/bcmrpi3-kernel-bis-4.14.54.20180713.tar.xz)
 
 The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && conform_config.sh && make olddefconfig`) may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/config). The 'baseline' `bcmrpi3_defconfig` may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/bcmrpi3_config), the `conform_config.sh` script may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh), and a diff between the 'tweaked' and 'baseline' configurations may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/vs_bcmrpi3_config.diff).
 
@@ -37,8 +37,8 @@ The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && c
 To deploy (assuming that your RPi3's micro SD-card's first partition is mounted as `/boot`, and you are already running a 64-bit RPi3 image, such as my [gentoo-on-rpi3-64bit](https://github.com/sakaki-/gentoo-on-rpi3-64bit)) simply download, untar into the root directory, and reboot:
 ```console
 pi64 ~ # cp /boot/kernel8.img{,.old}
-pi64 ~ # wget -c https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.54.20180710/bcmrpi3-kernel-bis-4.14.54.20180710.tar.xz
-pi64 ~ # tar -xJf bcmrpi3-kernel-bis-4.14.54.20180710.tar.xz -C /
+pi64 ~ # wget -c https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.14.54.20180713/bcmrpi3-kernel-bis-4.14.54.20180713.tar.xz
+pi64 ~ # tar -xJf bcmrpi3-kernel-bis-4.14.54.20180713.tar.xz -C /
 pi64 ~ # sync && reboot
 ```
 
@@ -52,7 +52,7 @@ pi64 ~ # reboot
 Or, to install a particular version (e.g.):
 ```console
 pi64 ~ # emaint sync --repo rpi3
-pi64 ~ # emerge -av =bcmrpi3-kernel-bis-bin-4.14.54.20180710
+pi64 ~ # emerge -av =bcmrpi3-kernel-bis-bin-4.14.54.20180713
 pi64 ~ # reboot
 ```
 
