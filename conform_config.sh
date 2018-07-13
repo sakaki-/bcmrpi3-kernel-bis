@@ -44,3 +44,10 @@ set_kernel_config VIRTUALIZATION y
 set_kernel_config KVM y
 set_kernel_config VHOST_NET m
 set_kernel_config VHOST_CROSS_ENDIAN_LEGACY y
+
+# enable ZSWAP support for better performance during large builds etc.
+# requires activation via kernel parameter or sysfs
+# see e.g. https://askubuntu.com/a/472227 for a summary of ZSWAP (vs ZRAM etc.)
+# and e.g. https://wiki.archlinux.org/index.php/zswap for parameters etc.
+
+set_kernel_config ZSWAP y
