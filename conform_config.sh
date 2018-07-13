@@ -50,4 +50,5 @@ set_kernel_config VHOST_CROSS_ENDIAN_LEGACY y
 # see e.g. https://askubuntu.com/a/472227 for a summary of ZSWAP (vs ZRAM etc.)
 # and e.g. https://wiki.archlinux.org/index.php/zswap for parameters etc.
 
+set_kernel_config ZPOOL y
 set_kernel_config ZSWAP y
