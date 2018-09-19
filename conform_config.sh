@@ -52,3 +52,7 @@ set_kernel_config VHOST_CROSS_ENDIAN_LEGACY y
 
 set_kernel_config ZPOOL y
 set_kernel_config ZSWAP y
+set_kernel_config ZBUD y
+set_kernel_config Z3FOLD y
+set_kernel_config ZSMALLOC y
+set_kernel_config PGTABLE_MAPPING y
