@@ -15,7 +15,7 @@ shopt -s nullglob
 
 set_kernel_config() {
     # flag as $1, value to set as $2, config must exist at "./.config"
-    local TGT="CONFIG_${1}"
+    local TGT="CONFIG_${1#CONFIG_}"
     local REP="${2//\//\\/}"
     if grep -q "^${TGT}[^_]" .config; then
         sed -i "s/^\(${TGT}=.*\|# ${TGT} is not set\)/${TGT}=${REP}/" .config
@@ -26,7 +26,7 @@ set_kernel_config() {
 
 unset_kernel_config() {
     # unsets flag with the value of $1, config must exist at "./.config"
-    local TGT="CONFIG_${1}"
+    local TGT="CONFIG_${1#CONFIG_}"
     sed -i "s/^${TGT}=.*/# ${TGT} is not set/" .config
 }
 
@@ -40,19 +40,19 @@ unset_kernel_config() {
 # enable basic KVM support; see e.g.
 # https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=210546&start=25#p1300453
 
-set_kernel_config VIRTUALIZATION y
-set_kernel_config KVM y
-set_kernel_config VHOST_NET m
-set_kernel_config VHOST_CROSS_ENDIAN_LEGACY y
+set_kernel_config CONFIG_VIRTUALIZATION y
+set_kernel_config CONFIG_KVM y
+set_kernel_config CONFIG_VHOST_NET m
+set_kernel_config CONFIG_VHOST_CROSS_ENDIAN_LEGACY y
 
 # enable ZSWAP support for better performance during large builds etc.
 # requires activation via kernel parameter or sysfs
 # see e.g. https://askubuntu.com/a/472227 for a summary of ZSWAP (vs ZRAM etc.)
 # and e.g. https://wiki.archlinux.org/index.php/zswap for parameters etc.
 
-set_kernel_config ZPOOL y
-set_kernel_config ZSWAP y
-set_kernel_config ZBUD y
-set_kernel_config Z3FOLD y
-set_kernel_config ZSMALLOC y
-set_kernel_config PGTABLE_MAPPING y
+set_kernel_config CONFIG_ZPOOL y
+set_kernel_config CONFIG_ZSWAP y
+set_kernel_config CONFIG_ZBUD y
+set_kernel_config CONFIG_Z3FOLD y
+set_kernel_config CONFIG_ZSMALLOC y
+set_kernel_config CONFIG_PGTABLE_MAPPING y
