@@ -162,7 +162,7 @@ set_kernel_config CONFIG_BRIDGE_EBT_T_FILTER m
 set_kernel_config CONFIG_MMC_BCM2835 n
 set_kernel_config CONFIG_MMC_SDHCI_IPROC n
 set_kernel_config CONFIG_USB_DWC2 n
-sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" "${KERNEL_DIR:-.}"/drivers/mmc/host/Kconfig
+sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" ./drivers/mmc/host/Kconfig
 
 # Enable VLAN support again (its in armv7 configs)
 set_kernel_config CONFIG_IPVLAN 
