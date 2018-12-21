@@ -64,16 +64,6 @@ set_kernel_config PGTABLE_MAPPING y
 set_kernel_config CONFIG_BPF_SYSCALL y
 set_kernel_config CONFIG_CGROUP_BPF y
 
-#Fix SD_DRIVER upstream and downstream problem in 64bit defconfig
-# use correct driver MMC_BCM2835_MMC instead of MMC_BCM2835_SDHOST - see https://www.raspberrypi.org/forums/viewtopic.php?t=210225
-set_kernel_config CONFIG_MMC_BCM2835 n
-set_kernel_config CONFIG_MMC_SDHCI_IPROC n
-set_kernel_config CONFIG_USB_DWC2 n
-sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" "${KERNEL_DIR}"/drivers/mmc/host/Kconfig
-
-#Enable VLAN support again (its in armv7 configs)
-set_kernel_config CONFIG_IPVLAN 
-
 #See https://github.com/raspberrypi/linux/issues/2177#issuecomment-354647406
 # Netfilter kernel support
 # xtables
@@ -166,3 +156,13 @@ set_kernel_config CONFIG_NF_LOG_BRIDGE m
 set_kernel_config CONFIG_BRIDGE_NF_EBTABLES m
 set_kernel_config CONFIG_BRIDGE_EBT_BROUTE m
 set_kernel_config CONFIG_BRIDGE_EBT_T_FILTER m 
+
+# Fix SD_DRIVER upstream and downstream problem in 64bit defconfig
+# use correct driver MMC_BCM2835_MMC instead of MMC_BCM2835_SDHOST - see https://www.raspberrypi.org/forums/viewtopic.php?t=210225
+set_kernel_config CONFIG_MMC_BCM2835 n
+set_kernel_config CONFIG_MMC_SDHCI_IPROC n
+set_kernel_config CONFIG_USB_DWC2 n
+sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" "${KERNEL_DIR:-.}"/drivers/mmc/host/Kconfig
+
+# Enable VLAN support again (its in armv7 configs)
+set_kernel_config CONFIG_IPVLAN 
