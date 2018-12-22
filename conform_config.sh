@@ -162,4 +162,4 @@ set_kernel_config CONFIG_USB_DWC2 n
 sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" ./drivers/mmc/host/Kconfig
 
 # Enable VLAN support again (its in armv7 configs)
-set_kernel_config CONFIG_IPVLAN 
+set_kernel_config CONFIG_IPVLAN m
