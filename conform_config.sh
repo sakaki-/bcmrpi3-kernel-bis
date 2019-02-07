@@ -163,3 +163,8 @@ sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_M
 
 # Enable VLAN support again (its in armv7 configs)
 set_kernel_config CONFIG_IPVLAN m
+
+# Enable SoC camera support
+# See https://www.raspberrypi.org/forums/viewtopic.php?p=1425257#p1425257
+set_kernel_config CONFIG_VIDEO_V4L2_SUBDEV_API y
+set_kernel_config CONFIG_VIDEO_BCM2835_UNICAM m
