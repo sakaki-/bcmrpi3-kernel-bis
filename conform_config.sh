@@ -154,12 +154,13 @@ set_kernel_config CONFIG_BRIDGE_NF_EBTABLES m
 set_kernel_config CONFIG_BRIDGE_EBT_BROUTE m
 set_kernel_config CONFIG_BRIDGE_EBT_T_FILTER m 
 
+# Mask this temporarily during switch to rpi-4.19.y
 # Fix SD_DRIVER upstream and downstream problem in 64bit defconfig
 # use correct driver MMC_BCM2835_MMC instead of MMC_BCM2835_SDHOST - see https://www.raspberrypi.org/forums/viewtopic.php?t=210225
-set_kernel_config CONFIG_MMC_BCM2835 n
-set_kernel_config CONFIG_MMC_SDHCI_IPROC n
-set_kernel_config CONFIG_USB_DWC2 n
-sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" ./drivers/mmc/host/Kconfig
+#set_kernel_config CONFIG_MMC_BCM2835 n
+#set_kernel_config CONFIG_MMC_SDHCI_IPROC n
+#set_kernel_config CONFIG_USB_DWC2 n
+#sed -i "s|depends on MMC_BCM2835_MMC && MMC_BCM2835_DMA|depends on MMC_BCM2835_MMC|" ./drivers/mmc/host/Kconfig
 
 # Enable VLAN support again (its in armv7 configs)
 set_kernel_config CONFIG_IPVLAN m
