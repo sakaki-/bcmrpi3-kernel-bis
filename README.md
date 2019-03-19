@@ -22,15 +22,15 @@ Each kernel release tarball currently provides the following files:
 * `/boot/COPYING.linux` (the kernel's license file);
 * `/boot/config` (the configuration used to build the kernel);
 * `/boot/System.map` (the kernel's symbol table);
-* `/boot/bcm-2710-rpi-3-b.dtb`, `/boot/bcm-2710-rpi-3-b-plus.dtb` and `/boot/bcm-2837-rpi-3-b.dtb` (and, from `4.19.28.20190314` onwards, `/boot/bcm2710-rpi-cm3.dtb`) (the device tree blobs);
-* `/boot/overlays/...` (the device tree blob overlays) (from `4.19.28.20190314`);
+* `/boot/bcm-2710-rpi-3-b.dtb`, `/boot/bcm-2710-rpi-3-b-plus.dtb` and `/boot/bcm-2837-rpi-3-b.dtb` (and, from `4.19.29.20190319` onwards, `/boot/bcm2710-rpi-cm3.dtb`) (the device tree blobs);
+* `/boot/overlays/...` (the device tree blob overlays) (from `4.19.29.20190319`);
 * `/lib/modules/<kernel release name>/...` (the module set for the kernel);
 
 The current kernel tarball may be downloaded from the link below (or via `wget`, or via the corresponding `bcmrpi3-kernel-bin` ebuild, per the [instructions following](#installation)):
 
 Variant | Version | Most Recent Image
 :--- | ---: | ---:
-Kernel, dtbs and modules | 4.19.28.20190314 | [bcmrpi3-kernel-bis-4.19.28.20190314.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.19.28.20190314/bcmrpi3-kernel-bis-4.19.28.20190314.tar.xz)
+Kernel, dtbs and modules | 4.19.29.20190319 | [bcmrpi3-kernel-bis-4.19.29.20190319.tar.xz](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.19.29.20190319/bcmrpi3-kernel-bis-4.19.29.20190319.tar.xz)
 
 The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && conform_config.sh && make olddefconfig`) may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/config). The 'baseline' `bcmrpi3_defconfig` may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/bcmrpi3_config), the `conform_config.sh` script may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh), and a diff between the 'tweaked' and 'baseline' configurations may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/vs_bcmrpi3_config.diff).
 
@@ -41,8 +41,8 @@ The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && c
 To deploy (assuming that your RPi3's micro SD-card's first partition is mounted as `/boot`, and you are already running a 64-bit RPi3 image, such as my [gentoo-on-rpi3-64bit](https://github.com/sakaki-/gentoo-on-rpi3-64bit)) simply download, untar into the root directory, and reboot:
 ```console
 pi64 ~ # cp /boot/kernel8.img{,.old}
-pi64 ~ # wget -c https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.19.28.20190314/bcmrpi3-kernel-bis-4.19.28.20190314.tar.xz
-pi64 ~ # tar -xJf bcmrpi3-kernel-bis-4.19.28.20190314.tar.xz -C /
+pi64 ~ # wget -c https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/download/4.19.29.20190319/bcmrpi3-kernel-bis-4.19.29.20190319.tar.xz
+pi64 ~ # tar -xJf bcmrpi3-kernel-bis-4.19.29.20190319.tar.xz -C /
 pi64 ~ # sync && reboot
 ```
 
@@ -56,7 +56,7 @@ pi64 ~ # reboot
 Or, to install a particular version (e.g.):
 ```console
 pi64 ~ # emaint sync --repo rpi3
-pi64 ~ # emerge -av =bcmrpi3-kernel-bis-bin-4.19.28.20190314
+pi64 ~ # emerge -av =bcmrpi3-kernel-bis-bin-4.19.29.20190319
 pi64 ~ # reboot
 ```
 
