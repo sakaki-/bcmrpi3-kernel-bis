@@ -169,3 +169,6 @@ set_kernel_config CONFIG_IPVLAN m
 # See https://www.raspberrypi.org/forums/viewtopic.php?p=1425257#p1425257
 set_kernel_config CONFIG_VIDEO_V4L2_SUBDEV_API y
 set_kernel_config CONFIG_VIDEO_BCM2835_UNICAM m
+
+# Enable RPI POE HAT fan
+set_kernel_config CONFIG_SENSORS_RPI_POE_FAN m
