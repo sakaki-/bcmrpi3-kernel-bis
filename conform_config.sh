@@ -172,3 +172,7 @@ set_kernel_config CONFIG_VIDEO_BCM2835_UNICAM m
 
 # Enable RPI POE HAT fan
 set_kernel_config CONFIG_SENSORS_RPI_POE_FAN m
+
+# Enable per-interface network priority control
+# (for systemd-nspawn)
+set_kernel_config CONFIG_CGROUP_NET_PRIO y
