@@ -176,3 +176,8 @@ set_kernel_config CONFIG_SENSORS_RPI_POE_FAN m
 # Enable per-interface network priority control
 # (for systemd-nspawn)
 set_kernel_config CONFIG_CGROUP_NET_PRIO y
+
+# Compile in BTRFS
+set_kernel_config CONFIG_BTRFS_FS=y
+set_kernel_config CONFIG_BTRFS_FS_POSIX_ACL=y
+set_kernel_config CONFIG_BTRFS_FS_REF_VERIFY=y
