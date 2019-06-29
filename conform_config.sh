@@ -181,3 +181,8 @@ set_kernel_config CONFIG_CGROUP_NET_PRIO y
 set_kernel_config CONFIG_BTRFS_FS y
 set_kernel_config CONFIG_BTRFS_FS_POSIX_ACL y
 set_kernel_config CONFIG_BTRFS_FS_REF_VERIFY y
+
+# Re-enable V4L2 camera and codec drivers (undo commit e8a66b4)
+# (for now)
+set_kernel_config CONFIG_VIDEO_BCM2835 m
+set_kernel_config CONFIG_VIDEO_CODEC_BCM2835 m
