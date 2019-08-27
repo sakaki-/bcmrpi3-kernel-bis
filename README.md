@@ -34,7 +34,7 @@ Kernel, dtbs and modules | 4.19.67.20190827 | [bcmrpi3-kernel-bis-4.19.67.201908
 
 The corresponding kernel configuration (derived via `make bcmrpi3_defconfig && conform_config.sh && make olddefconfig`) may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/config). The 'baseline' `bcmrpi3_defconfig` may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/bcmrpi3_config), the `conform_config.sh` script may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh), and a diff between the 'tweaked' and 'baseline' configurations may be viewed [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/vs_bcmrpi3_config.diff).
 
-> A list of all releases may be seen [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases).
+> A list of all releases may be seen [here](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases). For an equivalent kernel autobuild for the RPi4B, please see [here](https://github.com/sakaki-/bcm2711-kernel-bis).
 
 ## <a name="installation"></a>Installation
 
