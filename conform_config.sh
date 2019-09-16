@@ -181,3 +181,7 @@ set_kernel_config CONFIG_CGROUP_NET_PRIO y
 set_kernel_config CONFIG_BTRFS_FS y
 set_kernel_config CONFIG_BTRFS_FS_POSIX_ACL y
 set_kernel_config CONFIG_BTRFS_FS_REF_VERIFY y
+
+# Diffie-Hellman operations on retained keys
+# (required for >keyutils-1.6)
+set_kernel_config CONFIG_KEY_DH_OPERATIONS y
