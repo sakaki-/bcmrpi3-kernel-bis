@@ -1,7 +1,7 @@
 22c22
-< CONFIG_LOCALVERSION="-v8-988cc7beacc1"
+< CONFIG_LOCALVERSION="-v8-edc6ef437bd6"
 ---
-> CONFIG_LOCALVERSION="-v8-988cc7beacc1-bis"
+> CONFIG_LOCALVERSION="-v8-edc6ef437bd6-bis"
 119c119
 < # CONFIG_CGROUP_PIDS is not set
 ---
