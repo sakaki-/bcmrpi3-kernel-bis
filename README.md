@@ -5,7 +5,9 @@ Automated build of a tweaked version of the latest 64-bit `bcmrpi3_defconfig` Li
 
 <img src="https://raw.githubusercontent.com/sakaki-/resources/master/raspberrypi/pi3/Raspberry_Pi_3_B_and_B_plus.jpg" alt="Raspberry Pi 3 B and B+" width="250px" align="right"/>
 
-This project contains a weekly autobuild of the default branch (currently, `rpi-4.19.y`) of the [official Raspberry Pi Linux source tree](https://github.com/raspberrypi/linux), for the [64-bit Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) and [B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/).
+This project contains a weekly autobuild of the default branch (currently, `rpi-5.4.y`) of the [official Raspberry Pi Linux source tree](https://github.com/raspberrypi/linux), for the [64-bit Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) and [B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/).
+
+> NB: (8 June 2020) the transition from `rpi-4.19.y` to `rpi-5.4.y` has not yet happened upstream, but as it will do shortly, I have elected to pre-emptively migrate.
 
 As with its sister project [bcmrpi3-kernel](https://github.com/sakaki-/bcmrpi3-kernel), the baseline build configuration is the upstream `bcmrpi3_defconfig`, wherein the first 12 hex digits of the tip commit SHA1 hash are appended to `CONFIGLOCALVERSION` (with a separating hyphen). However, in *this* project, `-bis` is additionally appended to `CONFIGLOCALVERSION`, and (more importantly) additional tweaks are *also* applied to the kernel configuration before building, by running the [`conform_config.sh`](https://github.com/sakaki-/bcmrpi3-kernel-bis/blob/master/conform_config.sh) script.
 
@@ -15,7 +17,7 @@ A new build tarball is automatically created and uploaded as a release asset eac
 
 > The default branch is used, as that is generally given most attention for e.g. VC4 backports.
 
-As an (historical) example, on 1 June 2018, the default branch was `rpi-4.14.y` (NB, it is `rpi-4.19.y` now), and the latest commit was `4fca48b7612da3ff5737e27da15b0964bdf4928f` (the short form of which is `4fca48b7612d`). The created release was [4.14.44.20180601](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/4.14.44.20180601), within which the kernel tarball was `bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz`, and the corresponding kernel release name was `4.14.44-v8-4fca48b7612d-bis+`.
+As an (historical) example, on 1 June 2018, the default branch was `rpi-4.14.y` (NB, it is `rpi-5.4.y` now), and the latest commit was `4fca48b7612da3ff5737e27da15b0964bdf4928f` (the short form of which is `4fca48b7612d`). The created release was [4.14.44.20180601](https://github.com/sakaki-/bcmrpi3-kernel-bis/releases/4.14.44.20180601), within which the kernel tarball was `bcmrpi3-kernel-bis-4.14.44.20180601.tar.xz`, and the corresponding kernel release name was `4.14.44-v8-4fca48b7612d-bis+`.
 
 Each kernel release tarball currently provides the following files:
 * `/boot/kernel8.img` (this is the bootable 64-bit kernel);
